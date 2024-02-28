@@ -29,7 +29,6 @@ def vigenere_decrypt(encrypted_text, key):
             decrypted_text += char
     return decrypted_text
 
-
 def break_vigenere(ciphertext, keyword_length):
     # Generate all possible combinations of three-digit ASCII keys
     possible_keys = itertools.product(range(97, 123), repeat=keyword_length)

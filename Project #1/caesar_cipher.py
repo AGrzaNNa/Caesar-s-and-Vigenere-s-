@@ -18,9 +18,12 @@ def caesar_cipher_decrypt(sample, move):
 
 def caesar_cipher_decrypt_auto(ciphertext):
     # Decrypt code in every shift from range
+    result = []
     for shift in range(26):
         decrypted_text = caesar_cipher_decrypt(ciphertext, shift)
         words_list = decrypted_text.split()  # Save decrypted_text to list
         for word in words_list:
-            if validate_word(word):
-                return decrypted_text
+            if validate_word(word) and word not in result:
+                result.append(decrypted_text)
+    return result
+
